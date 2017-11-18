@@ -1,0 +1,127 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a (click)="getCategory(1)">Technology</a></li>
+  <li><a (click)="getCategory(2)">Management</a></li>
+  <li><a (click)="getCategory(3)">Medical</a></li>
+  <li><a (click)="getCategory(4)">Cultural</a></li>
+  <li><a (click)="getCategory(5)">Social</a></li>
+  <li><a (click)="getCategory(6)">Others</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a (click)="getCategory(1)">Technology</a></li>
+  <li><a (click)="getCategory(2)">Management</a></li>
+  <li><a (click)="getCategory(3)">Medical</a></li>
+  <li><a (click)="getCategory(4)">Cultural</a></li>
+  <li><a (click)="getCategory(5)">Social</a></li>
+  <li><a (click)="getCategory(6)">Others</a></li>
+</ul>
+<div>
+  <nav>
+    <div class="nav-wrapper">
+      <a (click)="getCategory(0)" style="cursor: pointer" class="brand-logo">My Blog</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><div class="row"><div class="col s12">
+          <nav>
+            <div class="nav-wrapper">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </div></div></li>
+        <li><a (click)="UserLogout()">Logout</a></li>
+        <li><a (click)="getCategory(-1)">favourites</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><div class="row"><div class="col s12">
+          <nav>
+            <div class="nav-wrapper">
+              <form>
+                <div class="input-field">
+                  <input id="search1" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </div></div></li>
+        <li class="divider"></li>
+        <li><a (click)="getCategory(-1)">favourites</a></li>
+        <li><a (click)="UserLogout()">Logout</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<div class="row">
+
+  <div class="col s12 m6">
+    <div class="row" *ngFor="let blog of Blogs">
+      <div class="col s12" *ngIf="showblog(blog)" >
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">{{blog.title}}<sub> - Posted by {{blog.authorName}} on {{blog.date}}</sub></span>
+            <p>{{blog.description}}</p>
+          </div>
+          <div class="card-action">
+            <a class="waves-effect waves-light btn" *ngIf="validUser(blog.author)" (click)="deleteBlog(blog.id)">
+              <i class="material-icons left">delete_forever</i>
+            </a>
+            <a class="waves-effect waves-light btn" (click)="markAsFovourite(blog.id)" *ngIf="!isFavourite(blog.id)"  >
+              <i class="material-icons left">star_border</i>
+            </a>
+            <a class="waves-effect waves-light btn" (click)="unmarkAsFovourite(blog.id)" *ngIf="isFavourite(blog.id)">
+              <i class="material-icons left">star</i>
+            </a>
+            <a class="waves-effect waves-light btn" *ngIf="validUser(blog.author)" (click)="editBlog(blog)">
+              <i class="material-icons left">mode_edit</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="col s12 m6">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">title</i>
+        <input id="title" placeholder="Title" #title type="text" class="validate" name="title" [(ngModel)]="blogTitle">
+        <!--<label for="title">Title</label>-->
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea id="description" placeholder="Desc" #desc class="materialize-textarea" name="description" [(ngModel)]="blogDescription"></textarea>
+        <!--<label for="description">Description</label>-->
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">collections</i>
+        <select #category name="category" value = 'category'>
+          <option value="" >Choose your Category</option>
+          <option value="1">Technology</option>
+          <option value="2">Management</option>
+          <option value="3">Medical</option>
+          <option value="4" class="selected">Cultural</option>
+          <option value="5">Social</option>
+          <option value="6">Others</option>
+        </select>
+        <!--<label>Category</label>-->
+      </div>
+      <div>
+      <a class="waves-effect waves-light btn" (click)="saveData(title.value,desc.value,category.value)"  >
+        <i class="material-icons right">save</i>Save</a>
+      </div>
+    </div>
+  </form>
+</div>

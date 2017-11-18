@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "username": "shivam",
+      "password": "shivam123",
+      "favourites": [
+        6,
+        4
+      ],
+      "id": 1
+    },
+    {
+      "username": "vishrut",
+      "password": "pagal",
+      "favourites": [
+        2,
+        6
+      ],
+      "id": 2
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "favourites": [
+        2,
+        1
+      ],
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Coma",
+      "description": "In this person feels everything but cannot respond anything",
+      "author": 3,
+      "authorName": "Admin",
+      "categoryId": 3,
+      "date": "14 August 2017",
+      "id": 2
+    },
+    {
+      "title": "FacebookApp",
+      "description": "App to connect people and share their activities",
+      "author": 2,
+      "authorName": "Vishrut",
+      "categoryId": 5,
+      "date": "17 August 2013",
+      "id": 3
+    },
+    {
+      "title": "new",
+      "description": "descriptions",
+      "author": "1",
+      "authorName": "Shivam",
+      "categoryId": "2",
+      "date": "11/15/2017",
+      "id": 5
+    },
+    {
+      "title": "abdab",
+      "description": "something new again",
+      "author": "1",
+      "authorName": "Shivam",
+      "categoryId": "5",
+      "date": "11/15/2017",
+      "id": 6
+    },
+    {
+      "title": "afdgf",
+      "description": "xcvfgbfbfh",
+      "author": "2",
+      "authorName": "Vishrut",
+      "categoryId": "2",
+      "date": "11/16/2017",
+      "id": 8
+    },
+    {
+      "title": "kjtyfghm",
+      "description": "fgjdncjg",
+      "author": "2",
+      "authorName": "Vishrut",
+      "categoryId": "5",
+      "date": "11/16/2017",
+      "id": 9
+    },
+    {
+      "title": "Anuglar",
+      "description": "Achieve the maximum speed possible on the Web Platform today, and take it further, via Web Workers and server-side rendering.\n\nAngular puts you in control over scalability. Meet huge data requirements by building data models on RxJS, Immutable.js or another push-model.\n\nspeed and performance\n",
+      "author": "1",
+      "authorName": "Shivam",
+      "categoryId": "1",
+      "date": "11/16/2017",
+      "id": 10
+    },
+    {
+      "title": "mnvvkj",
+      "description": "nbkhvkh",
+      "author": "2",
+      "authorName": "undefined",
+      "categoryId": "3",
+      "date": "11/16/2017",
+      "id": 11
+    }
+  ],
+  "categories": [
+    {
+      "name": "Technology",
+      "id": 1
+    },
+    {
+      "name": "Management",
+      "id": 2
+    },
+    {
+      "name": "Medical",
+      "id": 3
+    },
+    {
+      "name": "Cultural",
+      "id": 4
+    },
+    {
+      "name": "Social",
+      "id": 5
+    },
+    {
+      "name": "Others",
+      "id": 6
+    }
+  ]
+}
